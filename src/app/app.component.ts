@@ -22,10 +22,11 @@ import { RouterModule } from '@angular/router';
           </header>
         </mat-toolbar>
       </a>
-
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
+      <div class="container">
+        <section class="content">
+          <router-outlet></router-outlet>
+        </section>
+      </div>
     </main>
   `,
 })
