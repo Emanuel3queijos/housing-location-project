@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
           </header>
         </mat-toolbar>
       </a>
-      <div class="container">
+      <div class="container pb-5">
         <section class="content">
           <router-outlet></router-outlet>
         </section>
@@ -31,5 +31,8 @@ import { RouterModule } from '@angular/router';
   `,
 })
 export class AppComponent {
-  title = 'Emanuel fp';
+  title = 'House Location Project';
+
+  @ViewChild(HomeComponent)
+  homeComponentInstance!: HomeComponent;
 }
