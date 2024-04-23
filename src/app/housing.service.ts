@@ -7,8 +7,7 @@ import { Housinglocation } from './housinglocation';
 export class HousingService {
   constructor() {}
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
-  url =
-    'https://my-json-server.typicode.com/Emanuel3queijos/housing-location-project/db';
+  url = 'http://localhost:3000/locations';
 
   submitApplication(firstName: string, lastname: string, email: string) {
     console.log(
