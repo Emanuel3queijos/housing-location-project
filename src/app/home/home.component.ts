@@ -4,7 +4,6 @@ import { Housinglocation } from '../housinglocation';
 import { CommonModule } from '@angular/common';
 import { HousingService } from '../housing.service';
 import { Router } from '@angular/router';
-import { routes } from '../app.routes';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +15,13 @@ import { routes } from '../app.routes';
           type="text"
           placeholder="Filter by city"
           #filter
-          (keydown.enter)="searchNavegation(filter.value, $event)"
+          (keydown.enter)="filterResults(filter.value, $event)"
         />
 
         <button
           class="primary "
           type="button"
-          (click)="searchNavegation(filter.value, $event)"
+          (click)="filterResults(filter.value, $event)"
         >
           Search
         </button>
@@ -43,23 +42,22 @@ export class HomeComponent {
   housingLocationList: Housinglocation[] = [];
   housingService: HousingService = inject(HousingService);
 
-  searchNavegation(text: string, event: any) {
+  filterResults(text: string, event: any) {
     event.preventDefault();
-    this.route.navigate(['/search', text]);
+    if (!text || text === '') {
+      this.filteredLocationList = this.housingLocationList;
+      return;
+    }
+    this.filteredLocationList = this.housingLocationList.filter(
+      (housingLocation) =>
+        housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
+    if (this.filteredLocationList.length === 0) {
+      this.filteredLocationList = this.housingLocationList;
+
+      alert('Nenhum resultado encontrado.');
+    }
   }
-
-  // filterResults(text: string, event: any) {
-  //   event.preventDefault();
-  //   if (!text) {
-  //     this.filteredLocationList = this.housingLocationList;
-  //     return;
-  //   }
-
-  //   this.filteredLocationList = this.housingLocationList.filter(
-  //     (housingLocation) =>
-  //       housingLocation?.city.toLowerCase().includes(text.toLowerCase())
-  //   );
-  // }
   constructor(private route: Router) {
     this.housingService
       .getAllHousingLocations()
