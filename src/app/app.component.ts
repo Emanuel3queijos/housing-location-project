@@ -15,14 +15,14 @@ import { RouterModule } from '@angular/router';
           <header class="brand-name">
             <img
               class="brand-logo"
-              src="/assets/logo.svg"
+              src="/assets/logo.png"
               alt="logo"
               aria-hidden="true"
             />
           </header>
         </mat-toolbar>
       </a>
-      <div class="container pb-5">
+      <div class="container pb-5 mt-5">
         <section class="content">
           <router-outlet></router-outlet>
         </section>
