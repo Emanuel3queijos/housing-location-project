@@ -1,7 +1,7 @@
-package entities;
+package com.br.emanuelap.housinglocationprojectbackend.entities;
 
 
-import enums.Role;
+import com.br.emanuelap.housinglocationprojectbackend.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package entities;
+package com.br.emanuelap.housinglocationprojectbackend.entities;
 
 
 import jakarta.persistence.*;
