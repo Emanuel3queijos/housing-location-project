@@ -1,7 +1,4 @@
 package com.br.emanuelap.housinglocationprojectbackend.services;
 
-public interface AdServiceInterface {
-
-
-
+public class UserService {
 }

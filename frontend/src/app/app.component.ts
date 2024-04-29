@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, HomeComponent, MatToolbarModule, RouterModule],
   template: `
-    <main>
+    <main >
       <a [routerLink]="['/']">
         <mat-toolbar color="primary">
+          <!-- fazer comnponent de navbar para comportar as coisas -->
           <header class="brand-name">
             <img
               class="brand-logo"
