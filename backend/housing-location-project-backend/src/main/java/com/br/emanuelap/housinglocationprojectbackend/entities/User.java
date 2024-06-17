@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "user")
-public class Users extends Renter {
+public class User extends Renter {
     private String password;
     private Role role;
     private Date dateOfBirth;
